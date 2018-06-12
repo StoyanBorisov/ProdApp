@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   AddNewProduct(e) {
-    console.log(e);
+    console.log("add -> "+e);
     e.id = this.nextid++;
 
     this.serviceHandler.addProduct(e)
@@ -38,6 +38,10 @@ export class AppComponent {
     console.log("found in " + index);
     
     this.serviceHandler.delProduct(this.selectedProduct)
+  }
+
+  editSelected() {
+    console.log("4 edit -> "+this.selectedProduct)
   }
 
   ngOnInit() {

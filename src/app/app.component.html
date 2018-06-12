@@ -5,4 +5,9 @@
       <app-product [productData]="p"> </app-product> 
     </li>
   </ul>
-  <app-prodinput (newProduct)="AddNewProduct($event)"></app-prodinput><button (click)="deleteSelected()">delete Selected</button>
+  <app-prodinput (newProduct)="AddNewProduct($event)"></app-prodinput>
+  
+  <button *ngIf="selectedProduct.id" (click)="deleteSelected()">delete Selected</button>  
+  <br/>
+  <br/>
+  <button *ngIf="selectedProduct.id" (click)="editSelected()">edit Selected</button>

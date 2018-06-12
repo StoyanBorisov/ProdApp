@@ -7,9 +7,11 @@ import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 })
 export class ProdinputComponent implements OnInit {
   @Output() newProduct = new EventEmitter ()
+  
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
