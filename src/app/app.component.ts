@@ -38,6 +38,7 @@ export class AppComponent {
     console.log("found in " + index);
     
     this.serviceHandler.delProduct(this.selectedProduct)
+    this.selectedProduct = {}
   }
 
   editSelected() {
