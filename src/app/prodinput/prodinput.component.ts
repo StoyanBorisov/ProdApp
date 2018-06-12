@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-prodinput',
@@ -7,8 +7,12 @@ import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 })
 export class ProdinputComponent implements OnInit {
   @Output() newProduct = new EventEmitter ()
+  @Input() selectedProductData
   
-  constructor() { }
+
+  constructor() {
+    console.log("tuk sme "+this.selectedProductData)
+   }
 
   ngOnInit() {
 

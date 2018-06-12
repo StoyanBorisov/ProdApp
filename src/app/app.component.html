@@ -1,7 +1,8 @@
 <ul class="list" >
     <li class="listItem" *ngFor="let p of serviceHandler.getProducts()"
        [class.selected]="p === selectedProduct"
-       (click)="onSelect(p)">
+       (click)="onSelect(p)"
+       [selectedProductData] = "selectedProduct">
       <app-product [productData]="p"> </app-product> 
     </li>
   </ul>
