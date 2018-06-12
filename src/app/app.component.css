@@ -1,0 +1,20 @@
+.listItem {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.list {
+    line-height: 2em;
+    width: 15em;
+    padding: 0.8em 0.7em 0 0.7em;
+}
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+

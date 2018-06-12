@@ -1,0 +1,5 @@
+<p>
+    <input #iname type="text">
+    <input #iprice type="text">
+    <button (click)="this.newProduct.emit({ id: 11, name: iname.value, price: iprice.value})">([ добави ])</button>
+</p>
