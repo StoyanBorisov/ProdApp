@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProdinputComponent } from './prodinput/prodinput.component';
+// import { ProductService } from './shared/product.service';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProdinputComponent } from './prodinput/prodinput.component';
   imports: [
     BrowserModule
   ],
+ // providers: [ProductService],
   providers: [],
   bootstrap: [AppComponent]
 })

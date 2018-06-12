@@ -1,8 +1,8 @@
 <ul class="list" >
-    <li class="listItem" *ngFor="let p of products"
+    <li class="listItem" *ngFor="let p of serviceHandler.getProducts()"
        [class.selected]="p === selectedProduct"
        (click)="onSelect(p)">
-      <app-product [productData]="p"> </app-product>
-      </li>
+      <app-product [productData]="p"> </app-product> 
+    </li>
   </ul>
-  <app-prodinput (newProduct)="AddNewProduct($event)"></app-prodinput>
+  <app-prodinput (newProduct)="AddNewProduct($event)"></app-prodinput><button (click)="deleteSelected()">delete Selected</button>

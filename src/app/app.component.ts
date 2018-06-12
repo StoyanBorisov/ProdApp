@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from "../app/shared/product.service"
 
 @Component({
   selector: 'app-root',
@@ -8,23 +9,38 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   selectedProduct = {}
-  products = [
-    { id: 11, name: 'Ябълки',     price:  1.11},
-    { id: 12, name: 'Круши' ,     price:  1.12},
-    { id: 13, name: 'Сливи' ,     price:  1.13},
-    { id: 14, name: 'Компютри' ,  price:  144.8},
-    { id: 15, name: 'Мишки' ,     price:  151.5},
-    { id: 16, name: 'Проектори' , price:  161.9}
-  ];
-  nextid=17
-  onSelect(p){
+
+  //serviceHandler = new ProductService();
+
+  constructor(private serviceHandler: ProductService) { }
+
+  nextid = 100
+
+  onSelect(p) {
     console.log(p);
     this.selectedProduct = p;
   }
-  AddNewProduct(e){
+
+  AddNewProduct(e) {
     console.log(e);
     e.id = this.nextid++;
-    this.products.push(e);
+
+    this.serviceHandler.addProduct(e)
+  }
+
+  deleteSelected() {
+    if (this.selectedProduct.id == undefined)
+      console.log("not selected")
+    else
+      console.log(this.selectedProduct.id);
+
+    var index = this.serviceHandler.getProducts().indexOf(this.selectedProduct);
+    console.log("found in " + index);
+    
+    this.serviceHandler.delProduct(this.selectedProduct)
+  }
+
+  ngOnInit() {
   }
 }
 
