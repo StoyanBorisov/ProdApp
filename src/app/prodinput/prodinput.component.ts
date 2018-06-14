@@ -7,15 +7,18 @@ import { Component, OnInit, EventEmitter, Input, Output  } from '@angular/core';
 })
 export class ProdinputComponent implements OnInit {
   @Output() newProduct = new EventEmitter ()
-  @Input() selectedProductData
+  @Input() productData
   
-
   constructor() {
-    console.log("tuk sme "+this.selectedProductData)
    }
 
-  ngOnInit() {
+   editDatafunc(e) {
+    console.log("-------------")
+    console.log(e)
+    console.log(this.productData)
+  }
 
+  ngOnInit() {
   }
 
 }

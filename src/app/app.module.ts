@@ -10,7 +10,7 @@ import { ProdinputComponent } from './prodinput/prodinput.component';
   declarations: [
     AppComponent,
     ProductComponent,
-    ProdinputComponent
+    ProdinputComponent    
   ],
   imports: [
     BrowserModule

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output  } from '@angular/core';
 import { ProductService } from "../app/shared/product.service"
 
 @Component({
@@ -8,7 +8,8 @@ import { ProductService } from "../app/shared/product.service"
 })
 
 export class AppComponent {
-  selectedProduct = {}
+  @Output() editData = new EventEmitter ()
+  selectedProduct = { id: undefined, name: undefined,     price:  undefined }
 
   //serviceHandler = new ProductService();
 
@@ -19,6 +20,8 @@ export class AppComponent {
   onSelect(p) {
     console.log(p);
     this.selectedProduct = p;
+
+    this.editData.emit(p)
   }
 
   AddNewProduct(e) {
@@ -38,7 +41,7 @@ export class AppComponent {
     console.log("found in " + index);
     
     this.serviceHandler.delProduct(this.selectedProduct)
-    this.selectedProduct = {}
+    this.selectedProduct = { id: undefined, name: undefined,     price:  undefined }
   }
 
   editSelected() {
