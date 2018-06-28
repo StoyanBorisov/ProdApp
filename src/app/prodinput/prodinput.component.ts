@@ -13,7 +13,7 @@ export class ProdinputComponent implements OnInit {
    }
 
    editDatafunc(e) {
-    console.log("-------------")
+    console.log("-------------------------------")
     console.log(e)
     console.log(this.productData)
   }

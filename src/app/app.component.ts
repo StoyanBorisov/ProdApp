@@ -45,6 +45,7 @@ export class AppComponent {
   }
 
   editSelected() {
+    console.log(" ---------------------------------- ")
     console.log("4 edit -> "+this.selectedProduct)
   }
 
